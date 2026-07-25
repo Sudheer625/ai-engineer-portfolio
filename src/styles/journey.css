@@ -1,0 +1,260 @@
+.journey-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--space-9);
+}
+
+.education-section,
+.leadership-section {
+  background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--surface-muted) 30%, transparent));
+}
+
+.experience-section,
+.achievements-section {
+  background: color-mix(in srgb, var(--surface-muted) 32%, transparent);
+}
+
+.journey-kicker {
+  display: inline-flex;
+  margin-bottom: var(--space-2);
+  color: var(--secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.journey-marker {
+  color: #ffffff;
+  font-size: 0.82rem;
+}
+
+.education-timeline {
+  max-width: 54rem;
+  gap: var(--space-5);
+}
+
+.education-card {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.education-card h3,
+.experience-card h3,
+.leadership-card h3,
+.journey-achievement-card h3 {
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+}
+
+.journey-meta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.journey-meta-grid span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface-glass) 82%, transparent);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.45rem 0.7rem;
+}
+
+.journey-meta-grid svg,
+.highlight-list svg {
+  color: var(--primary);
+}
+
+.journey-meta-grid strong {
+  color: var(--text);
+}
+
+.experience-list {
+  position: relative;
+  display: grid;
+  gap: var(--space-6);
+}
+
+.experience-list::before {
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: 50%;
+  width: 1px;
+  content: '';
+  background: linear-gradient(180deg, transparent, var(--border-strong), transparent);
+}
+
+.experience-card {
+  position: relative;
+  display: grid;
+  width: min(100%, 39rem);
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+}
+
+.experience-card-left {
+  justify-self: start;
+}
+
+.experience-card-right {
+  justify-self: end;
+}
+
+.experience-card-icon,
+.leadership-icon,
+.achievement-icon {
+  display: grid;
+  place-items: center;
+  background: var(--gradient-soft);
+  color: var(--primary);
+}
+
+.experience-card-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-xl);
+  font-size: 1.25rem;
+}
+
+.experience-duration {
+  margin-top: var(--space-1);
+  font-weight: 600;
+}
+
+.highlight-list {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.highlight-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
+.highlight-list svg {
+  flex: 0 0 auto;
+  margin-top: 0.2rem;
+}
+
+.leadership-card {
+  display: grid;
+  max-width: 58rem;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-5);
+}
+
+.leadership-icon {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--border));
+  border-radius: var(--radius-2xl);
+  font-size: 1.6rem;
+}
+
+.leadership-content p {
+  max-width: 44rem;
+  margin-top: var(--space-3);
+}
+
+.leadership-roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.leadership-roles span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface-glass);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.55rem 0.8rem;
+}
+
+.leadership-roles svg {
+  color: var(--secondary);
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.journey-achievement-card {
+  min-height: 13rem;
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.achievement-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-xl);
+  font-size: 1.25rem;
+}
+
+.achievement-value {
+  display: block;
+  margin-bottom: var(--space-2);
+  background: var(--gradient-primary);
+  background-clip: text;
+  color: transparent;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.95;
+}
+
+.journey-achievement-card p {
+  margin-top: var(--space-2);
+  font-size: 0.94rem;
+}
+
+@media (max-width: 1024px) {
+  .achievement-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .journey-section {
+    padding-block: var(--space-8);
+  }
+
+  .experience-list::before {
+    left: 0.75rem;
+  }
+
+  .experience-card,
+  .experience-card-left,
+  .experience-card-right {
+    width: 100%;
+    justify-self: stretch;
+  }
+}
+
+@media (max-width: 620px) {
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card,
+  .leadership-card {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,266 @@
+.resume-page {
+  padding-block: 0;
+}
+
+.resume-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: clamp(4rem, 8vw, 7rem);
+  text-align: center;
+}
+
+.resume-hero-content {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-4);
+}
+
+.resume-hero-icon,
+.certificate-icon,
+.score-icon {
+  display: grid;
+  place-items: center;
+  background: var(--gradient-soft);
+  color: var(--primary);
+}
+
+.resume-hero-icon {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--border));
+  border-radius: var(--radius-2xl);
+  font-size: 1.7rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.resume-hero h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+}
+
+.resume-hero p {
+  max-width: 42rem;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+
+.resume-section {
+  padding-block: var(--space-8);
+}
+
+.resume-section:nth-of-type(odd) {
+  background: color-mix(in srgb, var(--surface-muted) 28%, transparent);
+}
+
+.resume-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.resume-stat-card {
+  display: grid;
+  min-height: 7rem;
+  place-items: center;
+  text-align: center;
+}
+
+.resume-stat-card strong,
+.score-card strong {
+  background: var(--gradient-primary);
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+}
+
+.resume-stat-card strong {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.resume-stat-card span,
+.score-card span {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.resume-viewer-card {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.resume-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.resume-kicker {
+  display: inline-flex;
+  margin-bottom: var(--space-2);
+  color: var(--secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.resume-viewer-header h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.resume-frame-wrap {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  background: var(--surface-muted);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--surface) 60%, transparent);
+}
+
+.resume-frame-wrap iframe {
+  display: block;
+  width: 100%;
+  min-height: clamp(34rem, 72vh, 52rem);
+  border: 0;
+}
+
+.resume-mobile-fallback {
+  display: none;
+}
+
+.resume-mobile-fallback.is-visible {
+  display: grid;
+}
+
+.certificate-grid,
+.score-card-grid,
+.highlight-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.certificate-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.score-card-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.highlight-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.certificate-card,
+.score-card,
+.highlight-card {
+  height: 100%;
+}
+
+.certificate-card {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.certificate-icon,
+.score-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-xl);
+  font-size: 1.25rem;
+}
+
+.certificate-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.score-card {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.score-card strong {
+  display: block;
+  margin-block: var(--space-2);
+  font-size: clamp(1.65rem, 3vw, 2.4rem);
+}
+
+.score-card p {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.highlight-card {
+  display: flex;
+  min-height: 6rem;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.highlight-card svg {
+  color: var(--primary);
+  font-size: 1.35rem;
+}
+
+.highlight-card span {
+  color: var(--text);
+  font-weight: 800;
+}
+
+@media (max-width: 1080px) {
+  .resume-stats-grid,
+  .score-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .resume-section {
+    padding-block: var(--space-7);
+  }
+
+  .resume-stats-grid,
+  .certificate-grid,
+  .score-card-grid,
+  .highlight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .resume-viewer-header {
+    display: grid;
+  }
+
+  .resume-frame-wrap {
+    display: none;
+  }
+
+  .resume-mobile-fallback {
+    display: grid;
+    gap: var(--space-3);
+    border: 1px dashed var(--border-strong);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+  }
+}
+
+@media (max-width: 560px) {
+  .resume-stats-grid,
+  .certificate-grid,
+  .score-card-grid,
+  .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-actions .btn,
+  .certificate-actions .btn {
+    width: 100%;
+  }
+}
